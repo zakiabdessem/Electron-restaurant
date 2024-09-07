@@ -1,9 +1,10 @@
+import { cn } from '@renderer/lib/utils'
 import { Tabs, TabsList, TabsTrigger } from './Tabs'
 
-function Navbar() {
+function Navbar({ className }: { className: string }) {
   return (
-    <Tabs defaultValue="account">
-      <TabsList className="grid w-full grid-cols-7">
+    <Tabs defaultValue={cn('account', className)}>
+      <TabsList className="grid grid-cols-7 w-[800px]">
         <TabsTrigger className="text-white w-full text-left" value="Hot Dishes">
           Hot Dishes
         </TabsTrigger>
@@ -22,9 +23,7 @@ function Navbar() {
         <TabsTrigger className="text-white w-full" value="Dessert">
           Dessert
         </TabsTrigger>
-        <div className="text-white w-full">
-          
-        </div>
+        <div className="text-white w-full"></div>
       </TabsList>
     </Tabs>
   )
