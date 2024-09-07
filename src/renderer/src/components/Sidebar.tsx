@@ -32,7 +32,7 @@ function Sidebar({ className }) {
 
             <div
               className={cn(
-                active == 'Home' ? 'bg-primary' : 'bg-none',
+                active == 'Home' ? 'bg-primary' : 'bg-none hover:bg-primary',
                 'h-24 relative w-24 left-4 rounded-l-2xl cursor-pointer'
               )}
             >
@@ -54,7 +54,7 @@ function Sidebar({ className }) {
 
             <div
               className={cn(
-                active == 'Discount' ? 'bg-primary' : 'bg-none',
+                active == 'Discount' ? 'bg-primary' : 'bg-none hover:bg-primary',
                 'h-24 relative w-24 left-4 rounded-l-2xl cursor-pointer'
               )}
             >
@@ -76,7 +76,7 @@ function Sidebar({ className }) {
 
             <div
               className={cn(
-                active == 'Stats' ? 'bg-primary' : 'bg-none',
+                active == 'Stats' ? 'bg-primary' : 'bg-none hover:bg-primary',
                 'h-24 relative w-24 left-4 rounded-l-2xl cursor-pointer'
               )}
             >
@@ -98,7 +98,7 @@ function Sidebar({ className }) {
 
             <div
               className={cn(
-                active == 'Email' ? 'bg-primary' : 'bg-none',
+                active == 'Email' ? 'bg-primary' : 'bg-none hover:bg-primary',
                 'h-24 relative w-24 left-4 rounded-l-2xl cursor-pointer'
               )}
             >
@@ -120,7 +120,7 @@ function Sidebar({ className }) {
 
             <div
               className={cn(
-                active == 'Notif' ? 'bg-primary' : 'bg-none',
+                active == 'Notif' ? 'bg-primary' : 'bg-none hover:bg-primary',
                 'h-24 relative w-24 left-4 rounded-l-2xl cursor-pointer'
               )}
             >
@@ -142,7 +142,7 @@ function Sidebar({ className }) {
 
             <div
               className={cn(
-                active == 'Settings' ? 'bg-primary' : 'bg-none',
+                active == 'Settings' ? 'bg-primary' : 'bg-none hover:bg-primary',
                 'h-24 relative w-24 left-4 rounded-l-2xl cursor-pointer'
               )}
             >
@@ -162,7 +162,7 @@ function Sidebar({ className }) {
               </button>
             </div>
 
-            <div className="h-24 relative w-24 left-4 cursor-pointer">
+            <div className="h-24 relative w-24 left-4 cursor-pointer hover:bg-primary">
               <div className="flex justify-center items-center rounded-xl h-full w-full hover:bg-none">
                 <div className="justify-start">
                   <img

@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
-import { Input } from './components/Input'
+import { InputSearch } from './components/InputSearch'
 
 function Layout({ children }: { children: ReactElement | ReactElement[] | string }) {
   return (
@@ -19,8 +19,8 @@ function Layout({ children }: { children: ReactElement | ReactElement[] | string
                 Tuesday, 2 Feb 2021
               </div>
             </div>
-            <div className="flex items-center relative right-24 bottom-6">
-              <Input />
+            <div className="flex items-center relative bottom-6">
+              <InputSearch />
             </div>
           </div>
 

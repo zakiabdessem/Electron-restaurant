@@ -4,7 +4,7 @@ import * as React from 'react'
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
+const InputSearch = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, ...props }, ref) => {
     return (
       <div className="relative w-full">
@@ -32,6 +32,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     )
   }
 )
-Input.displayName = 'Input'
+InputSearch.displayName = 'InputSearch'
 
-export { Input }
+export { InputSearch }
