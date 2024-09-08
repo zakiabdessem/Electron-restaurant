@@ -26,7 +26,7 @@ function App(): JSX.Element {
               {Array.from({ length: 9 }).map((_, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center rounded-2xl h-60 w-52 bg-[#1F1D2B]"
+                  className="flex flex-col items-center rounded-2xl h-60 w-52 bg-[#1F1D2B] cursor-pointer"
                 >
                   <img className="w-32 h-32 relative bottom-14" src={Soup1} alt="" />
                   <h1 className="text-md text-white font-sans text-center relative bottom-10 font-medium max-w-36">
@@ -42,7 +42,7 @@ function App(): JSX.Element {
             <h1 className="text-white font-sans font-semibold tracking-wide text-lg p-2 py-4">
               Orders #34562
             </h1>
-            <div className="flex gap-x-2 p-2 py-2 w-[214px]">
+            <div className="flex gap-x-2 p-2 py-4 pt-0 w-[214px]">
               <Button className="text-white bg-[#EA7C69] font-sans font-semibold w-[66px] h-[34px] px-2">
                 Dine In
               </Button>
@@ -216,7 +216,7 @@ function TableDemo() {
                 id="detail"
                 placeholder="Order Note..."
               />
-              <Button className="text-white border-[#EA7C69] border font-sans font-semibold w-[66px] h-[34px] px-2">
+              <Button className="hover:bg-[#2D303E] bg-transparent text-white border-[#EA7C69] border font-sans font-semibold w-[66px] h-[34px] px-2">
                 <Trash color="#EA7C69" strokeWidth={1.4} />
               </Button>
             </div>
@@ -234,7 +234,7 @@ function TableDemo() {
           <h3 className="font-sans text-white">$0</h3>
         </div>
         <div className="flex justify-between items-center w-full px-4">
-          <Button className="w-full bg-[#EA7C69] text-white font-semibold">
+          <Button className="w-full bg-[#EA7C69] text-white font-medium">
             Continue to Payment
           </Button>
         </div>
