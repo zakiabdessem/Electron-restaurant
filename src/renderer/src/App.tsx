@@ -193,7 +193,7 @@ function TableDemo() {
       </TableHeader>
       <TableBody>
         {invoices.map((invoice) => (
-          <TableRow key={invoice.invoice}>
+          <TableRow className='cursor-pointer' key={invoice.invoice}>
             <TableCell className="font-medium w-full">
               <div className="flex justify-center items-center">
                 <img src={Soup1} alt="" className="w-9 h-9 mr-2" />
