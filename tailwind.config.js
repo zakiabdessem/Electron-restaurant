@@ -53,7 +53,7 @@ module.exports = {
       fontFamily: {
         //sans: ['var(--font-sans)', ...fontFamily.sans],
         serif: ['var(--font-serif)', ...fontFamily.serif],
-        sans: ['Barlow Semi Condensed', ...fontFamily.sans]
+        sans: ['Barlow Semi Condensed', 'sans-serif']
       },
       keyframes: {
         'accordion-down': {

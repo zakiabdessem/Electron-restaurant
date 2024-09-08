@@ -5,27 +5,30 @@ import { InputSearch } from './components/InputSearch'
 
 function Layout({ children }: { children: ReactElement | ReactElement[] | string }) {
   return (
-    <div className="bg-primary h-full ">
+    <div className="bg-primary h-fit w-[1268px]">
+      {/* Main container */}
       <div className="flex">
-        <Sidebar className="" />
+        {/* Sidebar */}
+        <Sidebar className="sticky" />
 
-        <div className="flex flex-col justify-center relative bottom-[278px] left-6">
-          <div className="flex items-center justify-between">
-            <div className="flex flex-col items-start">
-              <div className="font-sans text-white text-3xl font-semibold relative bottom-9">
-                Jaegar Resto
-              </div>
-              <div className="font-sans text-gray-300 text-lg font-normal  relative bottom-8">
-                Tuesday, 2 Feb 2021
-              </div>
+        {/* Main content */}
+        <div className="flex flex-col w-full p-6 pr-0">
+          {/* Header */}
+          <div className="flex items-center justify-between max-w-[720px]">
+            <div className="flex flex-col">
+              <h1 className="font-sans text-white text-3xl font-semibold">Jaegar Resto</h1>
+              <p className="font-sans text-gray-300 text-lg">Tuesday, 2 Feb 2021</p>
             </div>
-            <div className="flex items-center relative bottom-6">
+
+            {/* Search input */}
+            <div className="flex items-center">
               <InputSearch />
             </div>
           </div>
 
-          <Navbar className="relative top-2" />
-          <div>{children}</div>
+          {/* Navbar */}
+          <Navbar className="mt-4 max-w-[950px]" />
+          {children}
         </div>
       </div>
     </div>

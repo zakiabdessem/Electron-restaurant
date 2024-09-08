@@ -3,7 +3,7 @@ import { Tabs, TabsList, TabsTrigger } from './Tabs'
 
 function Navbar({ className }: { className: string }) {
   return (
-    <Tabs defaultValue={cn('account', className)}>
+    <Tabs className='py-4' defaultValue={cn('account', className)}>
       <TabsList className="grid grid-cols-7 w-[800px]">
         <TabsTrigger className="text-white w-full text-left" value="Hot Dishes">
           Hot Dishes
