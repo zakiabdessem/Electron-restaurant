@@ -5,11 +5,14 @@ import {
   DrawerDescription,
   DrawerHeader,
   DrawerTitle,
-  DrawerTrigger
+  DrawerTrigger,
+  DrawerClose
 } from '@renderer/components/Drawer'
 import { ScrollArea } from '@renderer/components/ScrollArea'
+import { ArrowLeft, PlusIcon } from 'lucide-react'
+import React from 'react'
 
-export default function OrderModel() {
+export default function OrderModel({ OrderTable }: { OrderTable: React.ReactElement }) {
   // const [goal, setGoal] = useState(350)
 
   // function onClick(adjustment: number) {
@@ -19,54 +22,53 @@ export default function OrderModel() {
   return (
     <Drawer direction="right">
       <DrawerTrigger asChild>
-        <Button variant="outline">Open Drawer</Button>
+        <Button className="w-full bg-[#EA7C69] text-white font-medium" variant="outline">
+          Continue to Payment
+        </Button>
       </DrawerTrigger>
-      <DrawerContent className="h-screen top-0 right-0 left-auto mt-0 w-[500px] rounded-none">
-        <ScrollArea hideScroll={false} className="h-screen">
+      <DrawerContent className="h-screen top-0 right-0 left-auto mt-0 w-2/3 bg-[#1F1D2B] rounded-none">
+        <DrawerHeader>
+          <DrawerClose>
+            <ArrowLeft
+              className="hover:bg-gray-700 rounded-2xl p-1"
+              color="white"
+              width={25}
+              height={25}
+            />
+          </DrawerClose>
+        </DrawerHeader>
+        <ScrollArea hideScroll className="h-screen">
           <div className="mx-auto w-full p-5">
-            <DrawerHeader>
-              <DrawerTitle>Theme Color Options</DrawerTitle>
-              <DrawerDescription>
-                * Selected option will be applied to all layout elements (navbar, toolbar, etc.).
-                You can also create your own theme options and color schemes.
-              </DrawerDescription>
-            </DrawerHeader>
-            <div className="p-4 pb-0 space-y-4">
-              <div className="bg-muted flex items-center justify-center rounded-lg h-32">
-                <p>Image 1</p>
+            <div className="flex h-full w-full">
+              <div className="w-1/2 px-4">
+                <header>
+                  <DrawerHeader className="flex justify-between items-center border-b  border-[#393C49]">
+                    <div>
+                      <DrawerTitle className="text-2xl text-white font-sans font-semibold tracking-wide">
+                        Confirmation
+                      </DrawerTitle>
+                      <DrawerDescription className="font-sans">Orders #34562</DrawerDescription>
+                    </div>
+                    <DrawerClose>
+                      <Button className="bg-[#EA7C69]">
+                        <PlusIcon color="white" />
+                      </Button>
+                    </DrawerClose>
+                  </DrawerHeader>
+                </header>
+                <main>{OrderTable}</main>
               </div>
-              <div className="bg-muted flex items-center justify-center rounded-lg h-32">
-                <p>Image 2</p>
-              </div>
-              <div className="bg-muted flex items-center justify-center rounded-lg h-32">
-                <p>Image 3</p>
-              </div>
-              <div className="bg-muted flex items-center justify-center rounded-lg h-32">
-                <p>Image 4</p>
-              </div>
-              <div className="bg-muted flex items-center justify-center rounded-lg h-32">
-                <p>Image 4</p>
-              </div>
-              <div className="bg-muted flex items-center justify-center rounded-lg h-32">
-                <p>Image 5</p>
-              </div>
-              <div className="bg-muted flex items-center justify-center rounded-lg h-32">
-                <p>Image 6</p>
-              </div>
-              <div className="bg-muted flex items-center justify-center rounded-lg h-32">
-                <p>Image 7</p>
-              </div>
-              <div className="bg-muted flex items-center justify-center rounded-lg h-32">
-                <p>Image 8</p>
-              </div>
-              <div className="bg-muted flex items-center justify-center rounded-lg h-32">
-                <p>Image 9</p>
-              </div>
-              <div className="bg-muted flex items-center justify-center rounded-lg h-32">
-                <p>Image 10</p>
-              </div>
-              <div className="bg-muted flex items-center justify-center rounded-lg h-32">
-                <p>Image 11</p>
+              <div className="w-1/2 border-l border-[#393C49]">
+                <header>
+                  <DrawerHeader>
+                    <DrawerTitle>Theme Color Options</DrawerTitle>
+                    <DrawerDescription>
+                      * Selected option will be applied to all layout elements (navbar, toolbar,
+                      etc.). You can also create your own theme options and color schemes.
+                    </DrawerDescription>
+                  </DrawerHeader>
+                </header>
+                <main></main>
               </div>
             </div>
           </div>

@@ -10,6 +10,7 @@ import { ScrollArea } from './components/ScrollArea'
 
 import { Table, TableCell, TableHeader, TableRow } from './components/Table'
 import { Input } from './components/Input'
+import OrderModel from './models/OrderModel'
 
 function App(): JSX.Element {
   return (
@@ -234,9 +235,71 @@ function TableDemo() {
           <h3 className="font-sans text-white">$0</h3>
         </div>
         <div className="flex justify-between items-center w-full px-4">
-          <Button className="w-full bg-[#EA7C69] text-white font-medium">
-            Continue to Payment
-          </Button>
+          <OrderModel
+            OrderTable={
+              <div>
+                <ScrollArea hideScroll type="hover" className="h-[344px] rounded-md mb-0 my-6">
+                  {invoices.map((invoice) => (
+                    <div className="flex flex-col justify-center items-center">
+                      <TableRow
+                        className="cursor-pointer hover:bg-transparent"
+                        key={invoice.invoice}
+                      >
+                        <TableCell className="font-medium w-full ">
+                          <div className="flex justify-center items-center">
+                            <img src={Soup1} alt="" className="w-12 h-12 mr-2" />
+                            <div className="flex flex-col">
+                              <h1 className="text-white font-sans font-medium whitespace-nowrap">
+                                Spicy seasoned sea...
+                              </h1>
+                              <div className="text-[#ABBBC2] font-sans font-medium whitespace-nowrap text-sm mt-1">
+                                $ 2.29
+                              </div>
+                            </div>
+                          </div>
+                        </TableCell>
+                        <TableCell>
+                          <div className="flex w-full max-w-sm items-center space-x-2">
+                            <Input
+                              className="text-white font-sans p-4 text-center border-[#393C49] bg-[#2D303E] border rounded-xl w-[49px]"
+                              type="number"
+                              id="quantity"
+                              defaultValue="1"
+                              min="1"
+                            />
+                          </div>
+                        </TableCell>
+                        <TableCell className="text-right text-white font-sans font-medium whitespace-nowrap">
+                          $ 4,58
+                        </TableCell>
+                      </TableRow>
+                      <div className="flex justify-between items-center w-full py-1 pr-2">
+                        <Input
+                          className="text-[#E0E6E9] font-sans p-4 border-[#393C49] bg-[#2D303E] border rounded-xl w-full mx-2"
+                          type="text"
+                          id="detail"
+                          placeholder="Order Note..."
+                        />
+                        <Button className="hover:bg-[#2D303E] bg-transparent text-white border-[#EA7C69] border font-sans font-semibold w-[66px] h-[34px] px-2">
+                          <Trash color="#EA7C69" strokeWidth={1.4} />
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                </ScrollArea>
+                <div className="flex flex-col justify-center items-center w-full">
+                  <div className="flex justify-between items-center w-full px-4">
+                    <h2 className="font-sans text-[#ABBBC2]">Discount</h2>
+                    <h3 className="font-sans text-white">$0</h3>
+                  </div>
+                  <div className="flex justify-between items-center w-full px-4 py-4">
+                    <h2 className="font-sans text-[#ABBBC2]">Sub total</h2>
+                    <h3 className="font-sans text-white">$0</h3>
+                  </div>
+                </div>
+              </div>
+            }
+          />
         </div>
       </div>
     </Table>
