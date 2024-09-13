@@ -1,13 +1,17 @@
 import { cn } from '@renderer/lib/utils'
 import { Button } from './Button'
-import Logo from '../assets/Logo.svg'
-import HomeIcon from '../assets/Home.svg'
-import DiscountIcon from '../assets/Discount.svg'
-import StatsIcon from '../assets/Statistics.svg'
-import EmailIcon from '../assets/Email.svg'
-import NotifIcon from '../assets/Notification.svg'
-import SettingsIcon from '../assets/Settings.svg'
-import LogoutIcon from '../assets/Logout.svg'
+import Logo from '../assets/icons/Logo.svg'
+import HomeActive from '../assets/icons/HomeActive.svg'
+import Home from '../assets/icons/Home.svg'
+
+import DiscountIcon from '../assets/icons/Discount.svg'
+import DiscountActive from '../assets/icons/DiscountActive.svg'
+
+import StatsIcon from '../assets/icons/Statistics.svg'
+import EmailIcon from '../assets/icons/Email.svg'
+import NotifIcon from '../assets/icons/Notification.svg'
+import SettingsIcon from '../assets/icons/Settings.svg'
+import LogoutIcon from '../assets/icons/Logout.svg'
 import { useState } from 'react'
 
 function Sidebar({ className }) {
@@ -44,7 +48,7 @@ function Sidebar({ className }) {
               >
                 <div className="justify-start">
                   <img
-                    src={HomeIcon}
+                    src={active == 'Home' ? HomeActive : Home}
                     alt="aw"
                     className="flex justify-center items-center h-14 w-14"
                   />
@@ -66,7 +70,7 @@ function Sidebar({ className }) {
               >
                 <div className="justify-start">
                   <img
-                    src={DiscountIcon}
+                    src={active == 'Discount' ? DiscountIcon }
                     alt="aw"
                     className="flex justify-center items-center h-7 w-7"
                   />
