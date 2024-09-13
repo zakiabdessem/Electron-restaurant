@@ -238,7 +238,7 @@ function TableDemo() {
           <OrderModel
             OrderTable={
               <div>
-                <ScrollArea hideScroll type="hover" className="h-[344px] rounded-md mb-0 my-6">
+                <ScrollArea hideScroll type="hover" className="h-screen rounded-md mb-0 my-6">
                   {invoices.map((invoice) => (
                     <div className="flex flex-col justify-center items-center">
                       <TableRow

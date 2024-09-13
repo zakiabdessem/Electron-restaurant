@@ -47,7 +47,7 @@ export default function OrderModel({ OrderTable }: { OrderTable: React.ReactElem
                       <DrawerTitle className="text-2xl text-white font-sans font-semibold tracking-wide">
                         Confirmation
                       </DrawerTitle>
-                      <DrawerDescription className="font-sans">Orders #34562</DrawerDescription>
+                      <DrawerDescription className="font-sans font-normal text-md">Orders #34562</DrawerDescription>
                     </div>
                     <DrawerClose>
                       <Button className="bg-[#EA7C69]">
