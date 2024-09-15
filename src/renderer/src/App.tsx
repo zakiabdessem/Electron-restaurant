@@ -237,8 +237,18 @@ function TableDemo() {
         <div className="flex justify-between items-center w-full px-4">
           <OrderModel
             OrderTable={
-              <div>
-                <ScrollArea hideScroll type="hover" className="h-screen rounded-md mb-0 my-6">
+              <div className="h-screen">
+                <div className="flex flex-col justify-center items-center w-full py-6 pb-0">
+                  <div className="flex justify-between items-center w-full px-4">
+                    <h2 className="font-sans text-[#ABBBC2]">Discount</h2>
+                    <h3 className="font-sans text-white">$0</h3>
+                  </div>
+                  <div className="flex justify-between items-center w-full px-4 py-4">
+                    <h2 className="font-sans text-[#ABBBC2]">Sub total</h2>
+                    <h3 className="font-sans text-white">$0</h3>
+                  </div>
+                </div>
+                <ScrollArea hideScroll type="hover" className="rounded-md mb-0 my-6">
                   {invoices.map((invoice) => (
                     <div className="flex flex-col justify-center items-center">
                       <TableRow
@@ -287,16 +297,6 @@ function TableDemo() {
                     </div>
                   ))}
                 </ScrollArea>
-                <div className="flex flex-col justify-center items-center w-full">
-                  <div className="flex justify-between items-center w-full px-4">
-                    <h2 className="font-sans text-[#ABBBC2]">Discount</h2>
-                    <h3 className="font-sans text-white">$0</h3>
-                  </div>
-                  <div className="flex justify-between items-center w-full px-4 py-4">
-                    <h2 className="font-sans text-[#ABBBC2]">Sub total</h2>
-                    <h3 className="font-sans text-white">$0</h3>
-                  </div>
-                </div>
               </div>
             }
           />
