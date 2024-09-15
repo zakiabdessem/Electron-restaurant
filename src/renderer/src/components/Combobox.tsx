@@ -13,31 +13,15 @@ import {
   CommandList
 } from './Command'
 import { cn } from '@renderer/lib/utils'
+import { ScrollArea } from './ScrollArea'
 
-const frameworks = [
-  {
-    value: 'next.js',
-    label: 'Next.js'
-  },
-  {
-    value: 'sveltekit',
-    label: 'SvelteKit'
-  },
-  {
-    value: 'nuxt.js',
-    label: 'Nuxt.js'
-  },
-  {
-    value: 'remix',
-    label: 'Remix'
-  },
-  {
-    value: 'astro',
-    label: 'Astro'
-  }
-]
-
-export function ComboboxDemo() {
+export function ComboboxDemo({
+  list,
+  className
+}: {
+  list: { value: string; label: string }[]
+  className: string
+}) {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState('')
 
@@ -45,27 +29,29 @@ export function ComboboxDemo() {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
-          variant="outline"
+          variant="default"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className={cn(
+            'justify-between border border-[#393C49] bg-transparent text-white',
+            className
+          )}
         >
-          {value
-            ? frameworks.find((framework) => framework.value === value)?.label
-            : 'Select framework...'}
+          {value ? list.find((item) => item.value === value)?.label : 'Select Table...'}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent className="w-full p-0 border-[#393C49] bg-[#393C49]">
         <Command>
-          <CommandInput placeholder="Search framework..." />
+          <CommandInput className="text-white" placeholder="Search Table..." />
           <CommandList>
-            <CommandEmpty>No framework found.</CommandEmpty>
+            <CommandEmpty>No Table found.</CommandEmpty>
             <CommandGroup>
-              {frameworks.map((framework) => (
+              {list.map((item) => (
                 <CommandItem
-                  key={framework.value}
-                  value={framework.value}
+                  key={item.value}
+                  value={item.value}
+                  className="hover:bg-[#393C49] text-white font-sans font-semibold w-full"
                   onSelect={(currentValue) => {
                     setValue(currentValue === value ? '' : currentValue)
                     setOpen(false)
@@ -74,10 +60,10 @@ export function ComboboxDemo() {
                   <Check
                     className={cn(
                       'mr-2 h-4 w-4',
-                      value === framework.value ? 'opacity-100' : 'opacity-0'
+                      value === item.value ? 'opacity-100' : 'opacity-0'
                     )}
                   />
-                  {framework.label}
+                  {item.label}
                 </CommandItem>
               ))}
             </CommandGroup>

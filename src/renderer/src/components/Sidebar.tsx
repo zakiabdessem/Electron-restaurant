@@ -8,9 +8,15 @@ import DiscountIcon from '../assets/icons/Discount.svg'
 import DiscountActive from '../assets/icons/DiscountActive.svg'
 
 import StatsIcon from '../assets/icons/Statistics.svg'
-import EmailIcon from '../assets/icons/Email.svg'
+import StatsActiveIcon from '../assets/icons/StatisticsActive.svg'
+
 import NotifIcon from '../assets/icons/Notification.svg'
+import NotifActiveIcon from '../assets/icons/NotificationActive.svg'
+
 import SettingsIcon from '../assets/icons/Settings.svg'
+import SettingsActiveIcon from '../assets/icons/SettingsActive.svg'
+
+
 import LogoutIcon from '../assets/icons/Logout.svg'
 import { useState } from 'react'
 
@@ -69,11 +75,16 @@ function Sidebar({ className }) {
                 className="flex justify-center items-center rounded-xl h-full w-full hover:bg-none"
               >
                 <div className="justify-start">
-                  <img
-                    src={active == 'Discount' ? DiscountIcon }
-                    alt="aw"
-                    className="flex justify-center items-center h-7 w-7"
-                  />
+                  <div className="relative">
+                    <img
+                      src={active == 'Discount' ? DiscountActive : DiscountIcon}
+                      alt="aw"
+                      className="flex justify-center items-center h-6 w-6 relative top-7 left-4 z-20"
+                    />
+                    <div
+                      className={`${active == 'Discount' ? 'bg-[#EA7C69]' : 'bg-transparent'} rounded-xl h-14 w-14 relative z-0 bottom-3`}
+                    ></div>
+                  </div>
                 </div>
               </button>
             </div>
@@ -91,33 +102,16 @@ function Sidebar({ className }) {
                 className="flex justify-center items-center rounded-xl h-full w-full hover:bg-none"
               >
                 <div className="justify-start">
-                  <img
-                    src={StatsIcon}
-                    alt="aw"
-                    className="flex justify-center items-center h-6 w-6"
-                  />
-                </div>
-              </button>
-            </div>
-
-            <div
-              className={cn(
-                active == 'Email' ? 'bg-primary' : 'bg-none hover:bg-primary',
-                'h-24 relative w-24 left-4 rounded-l-2xl cursor-pointer'
-              )}
-            >
-              <button
-                onClick={() => {
-                  onClick('Email')
-                }}
-                className="flex justify-center items-center rounded-xl h-full w-full hover:bg-none"
-              >
-                <div className="justify-start">
-                  <img
-                    src={EmailIcon}
-                    alt="aw"
-                    className="flex justify-center items-center h-6 w-6"
-                  />
+                  <div className="relative">
+                    <img
+                      src={active == 'Stats' ? StatsActiveIcon : StatsIcon}
+                      alt="aw"
+                      className="flex justify-center items-center h-6 w-6 relative top-7 left-4 z-20"
+                    />
+                    <div
+                      className={`${active == 'Stats' ? 'bg-[#EA7C69]' : 'bg-transparent'} rounded-xl h-14 w-14 relative z-0 bottom-3`}
+                    ></div>
+                  </div>
                 </div>
               </button>
             </div>
@@ -134,12 +128,15 @@ function Sidebar({ className }) {
                 }}
                 className="flex justify-center items-center rounded-xl h-full w-full hover:bg-none"
               >
-                <div className="justify-start">
+                <div className="relative">
                   <img
-                    src={NotifIcon}
+                    src={active == 'Notif' ? NotifActiveIcon : NotifIcon}
                     alt="aw"
-                    className="flex justify-center items-center h-6 w-6"
+                    className="flex justify-center items-center h-6 w-6 relative top-7 left-4 z-20"
                   />
+                  <div
+                    className={`${active == 'Notif' ? 'bg-[#EA7C69]' : 'bg-transparent'} rounded-xl h-14 w-14 relative z-0 bottom-3`}
+                  ></div>
                 </div>
               </button>
             </div>
@@ -156,18 +153,21 @@ function Sidebar({ className }) {
                 }}
                 className="flex justify-center items-center rounded-xl h-full w-full hover:bg-none"
               >
-                <div className="justify-start">
+                <div className="relative">
                   <img
-                    src={SettingsIcon}
+                    src={active == 'Settings' ? SettingsActiveIcon : SettingsIcon}
                     alt="aw"
-                    className="flex justify-center items-center h-6 w-6"
+                    className="flex justify-center items-center h-6 w-6 relative top-7 left-4 z-20"
                   />
+                  <div
+                    className={`${active == 'Settings' ? 'bg-[#EA7C69]' : 'bg-transparent'} rounded-xl h-14 w-14 relative z-0 bottom-3`}
+                  ></div>
                 </div>
               </button>
             </div>
 
-            <div className="h-24 relative w-24 left-4 cursor-pointer hover:bg-primary">
-              <div className="flex justify-center items-center rounded-xl h-full w-full hover:bg-none">
+            <div className="h-24 relative w-24 left-4 cursor-pointer hover:bg-primary rounded-l-2xl">
+              <div className="flex justify-center items-center h-full w-full hover:bg-none">
                 <div className="justify-start">
                   <img
                     src={LogoutIcon}
